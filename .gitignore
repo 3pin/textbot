@@ -8,5 +8,8 @@
 # Setuptools distribution folder.
 /dist/
 
+# PyPI build folder.
+/build/
+
 # Python egg metadata, regenerated from source files by setuptools.
 /*.egg-info

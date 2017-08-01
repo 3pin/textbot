@@ -1,4 +1,4 @@
-This pthon package extracts general trends from a large list of short statements.
+This python package prevalent trends from a large list of short statements.
 Operation:
     Read a column as an array of strings from csv file,
     Give them their pos-tag via the PENN treebank
