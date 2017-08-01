@@ -1,5 +1,5 @@
-from distutils.core import setup
-#from setuptools import setup
+#from distutils.core import setup
+from setuptools import setup
 
 setup(
     # Application name:
@@ -22,10 +22,10 @@ setup(
     long_description=open("README.txt").read(),
 
     # minimum python version
-    #python_requires='>=3',
+    python_requires='>=3',
 
     # Dependent packages (distributions)
-    #install_requires=["tkinter.filedialog","tkinter.simpledialog","pandas","nltk","re","json","operator","collections","string","UnicodeDammit","bs4"],
+    install_requires=["tkinter.filedialog","tkinter.simpledialog","pandas","nltk","re","json","operator","collections","string","UnicodeDammit","bs4"],
 
     # Packages
     packages=["textbot"],
@@ -33,7 +33,7 @@ setup(
 
 
     # Include additional files into the package
-    #include_package_data=True,
+    include_package_data=True,
 
     # include specific data files into the above packages
     #package_data={'sample': ['package_data.dat'],},
@@ -47,7 +47,8 @@ setup(
         "Programming Language :: Python :: 3",
         "Development Status :: 3 - Alpha",
         "Environment :: Console",
-        "Intended Audience :: Developers :: Science/Research",
+        "Intended Audience :: Developers",
+        "Intended Audience :: Science/Research",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Operating System :: OS Independent",
         "Topic :: Software Development :: Libraries :: Python Modules",
