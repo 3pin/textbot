@@ -18,7 +18,7 @@ setup(
     # Details
     url='http://github.com/3pin/textbot',
     license="LICENSE.txt",
-    description="Read a column of strings from csv, parse wordnet pos_tags to lemmas, enumerate most_common lemmas, weight strings via top scoring lemmas",
+    description="Read a column of strings from csv, parse specific POS_tags, enumerate most_common POS, weight strings via top scoring POS",
     long_description=open("README.txt").read(),
 
     # minimum python version
