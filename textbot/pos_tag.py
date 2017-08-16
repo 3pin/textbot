@@ -1,5 +1,6 @@
 # function to readin an Array of Strings, then POS-tag them
 # specific strings can also be converged / MONIKERED / removed
+from tkinter.simpledialog import askstring
 
 # POS tag a list of strings, selectively tagging (ie. only for: nouns/verbs/adj)
 # in idle; supply the data_In_array in the brackets
@@ -7,16 +8,20 @@
 def PENN(dataArray):
     from nltk import pos_tag, word_tokenize
     lemmaList = []
-
-    '''
-    # converge/remove a specific word-set
-    for i, row in enumerate(dataArray):
-        row = row.lower()
-        #print('old: '+ row)
-        if "public service broadcasting" in row:
-            new_row = row.replace("public service broadcasting", "psb")
-            dataArray[i] = new_row
-    '''
+    
+    YesNo = askstring("PromptWindow", "Would you like to converge a wordseries into a moniker?")
+    if YesNo.lower() == 'yes' or YesNo.lower() == 'y':
+        wordseries = askstring("PromptWindow", "Input the specific wordseries to be MONIKERED...")
+        moniker = askstring("PromptWindow", "Input the moniker to replace the wordseries...")
+        # converge a specific word-set to a moniker
+        for i, row in enumerate(dataArray):
+            row = row.lower()
+            #print('old: '+ row)
+            if wordseries in row:
+                new_row = row.replace(wordseries, moniker)
+                dataArray[i] = new_row
+    else:
+        print ("User does not want to replace a wordseries with a moniker")
 
     for row in dataArray:
         #print(row)
@@ -65,15 +70,19 @@ def WN(dataArray):
     lmtzr = WordNetLemmatizer()
     lemmaList = []
 
-    '''
-    # converge/remove a specific word-set
-    for i, row in enumerate(dataArray):
-        row = row.lower()
-        #print('old: '+ row)
-        if "public service broadcasting" in row:
-            new_row = row.replace("public service broadcasting", "psb")
-            dataArray[i] = new_row
-    '''
+    YesNo = askstring("PromptWindow", "Would you like to converge a wordseries into a moniker?")
+    if YesNo.lower() == 'yes' or YesNo.lower() == 'y':
+        wordseries = askstring("PromptWindow", "Input the specific wordseries to be MONIKERED...")
+        moniker = askstring("PromptWindow", "Input the moniker to replace the wordseries...")
+        # converge a specific word-set to a moniker
+        for i, row in enumerate(dataArray):
+            row = row.lower()
+            #print('old: '+ row)
+            if wordseries in row:
+                new_row = row.replace(wordseries, moniker)
+                dataArray[i] = new_row
+    else:
+        print ("User does not want to replace a wordseries with a moniker")
 
     # POS-tag each sentence
     from nltk import pos_tag, word_tokenize
