@@ -15,7 +15,8 @@ def mostCommon(dataArray):
     from bs4 import UnicodeDammit
     #
     # additional words to omit
-    extra_words = ['be', 'psb']
+    # extra_words = ['be', 'psb']
+    extra_words = []
     #
     stringAll = ''
     emoticons_str = r"""
@@ -81,19 +82,23 @@ def mostCommon(dataArray):
     print(count_all.most_common(20))
     #
     sorted_dictionary = OrderedDict( sorted(count_all.items(), key=lambda t : t[1] , reverse=True) )
-    #print(sorted_dictionary.keys())
+    print(sorted_dictionary.keys())
     # sort by VAL in descending order
     #print( sorted(count_all.values()) )
     #count_all_sorted = sorted(count_all.items(), key=operator.itemgetter(1))
     #print(count_all_sorted)
 
+    '''
     # ask user for number which Most_Common_Count must be above, then create new dict with Top_Counts
     from tkinter.simpledialog import askstring
     shortdict_tresh = askstring("PromptWindow", "Enter cutoff integer in POS most-common-count")
     shortdict_num = int(shortdict_tresh)
     shortdict = dict((key,value) for key, value in sorted_dictionary.items() if value > shortdict_num)
-    print('shortdict... ')
-    print(str(shortdict))
+    '''
+
+    shortdict = dict( (key,value) for key, value in sorted_dictionary.items() )
+    #print('shortdict... ')
+    #print(str(shortdict))
     dict_title = str(shortdict)
     #
     # take most-Common count and calcualte weighted score per string in lemma-dataArray...

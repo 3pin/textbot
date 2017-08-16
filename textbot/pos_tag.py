@@ -8,6 +8,7 @@ def PENN(dataArray):
     from nltk import pos_tag, word_tokenize
     lemmaList = []
 
+    '''
     # converge/remove a specific word-set
     for i, row in enumerate(dataArray):
         row = row.lower()
@@ -15,6 +16,7 @@ def PENN(dataArray):
         if "public service broadcasting" in row:
             new_row = row.replace("public service broadcasting", "psb")
             dataArray[i] = new_row
+    '''
 
     for row in dataArray:
         #print(row)
@@ -63,6 +65,7 @@ def WN(dataArray):
     lmtzr = WordNetLemmatizer()
     lemmaList = []
 
+    '''
     # converge/remove a specific word-set
     for i, row in enumerate(dataArray):
         row = row.lower()
@@ -70,6 +73,7 @@ def WN(dataArray):
         if "public service broadcasting" in row:
             new_row = row.replace("public service broadcasting", "psb")
             dataArray[i] = new_row
+    '''
 
     # POS-tag each sentence
     from nltk import pos_tag, word_tokenize

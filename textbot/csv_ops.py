@@ -12,7 +12,7 @@ def read_csv():
     csvfile = askopenfilename()
     # print the columns in the csvfile
     import pandas as pd
-    df = pd.read_csv(csvfile, encoding = encoding)
+    df = pd.read_csv(csvfile, error_bad_lines = False, warn_bad_lines = True, skip_blank_lines = True, skipinitialspace = True, encoding = encoding)
     col_index = 0
     '''
     for column in df:

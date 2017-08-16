@@ -1,6 +1,9 @@
 # macro
 # reads a csv, selects a column with comments, lemmatizes (saves them to csv), mostCommon count, cutoff-weighted / saves to csv
 
+print ("\n")
+print ("textbot loading")
+
 import csv_ops
 # select / load the filename of the relevant csv file as 'csvfile'
 csv_ops.read_csv()
@@ -14,12 +17,12 @@ lemmas = pos_tag.WN(comments)
 
 # save lemmas array to csv column
 from tkinter.simpledialog import askstring
-YesNo = askstring("PromptWindow", "Would you like to write the 'LEMMAS' to the csvfile?")
+YesNo = askstring("PromptWindow", "Would you like to write the stripped-phrases to the csvfile?")
 if YesNo.lower() == 'yes' or YesNo.lower() == 'y':
-    csv_ops.save_col_2_csv('lemmas', lemmas)
-    print ("Saved 'LEMMAS' to csvfile")
+    csv_ops.save_col_2_csv('stripped_phrases', lemmas)
+    print ("Saved 'stripped-phrases' to the csvfile")
 else:
-    print ("Did not save 'LEMMAS' to csvfile")
+    print ("Did not save 'stripped-phrases' to the csvfile")
 
 # count most common - prompt the user for the cutoff - calculated weightings for all counts above cutoff
 import pos_count
